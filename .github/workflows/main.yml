@@ -37,4 +37,4 @@ jobs:
         run: |
           echo "Deploying the project..."
           # Example: Deploy to a web server using scp
-          scp -r ./build 185.199.108.153
+          scp -r ./dist 185.199.108.153
