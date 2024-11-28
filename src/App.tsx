@@ -1,26 +1,53 @@
 import React from 'react';
+import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Expertise from './components/Expertise';
+import Services from './components/Services';
 import Innovations from './components/Innovations';
-import Visionaries from './components/Visionaries';
+import Industries from './components/Industries';
+import Partners from './components/Partners';
 import About from './components/About';
 import Footer from './components/Footer';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2563eb',
+    },
+    background: {
+      default: '#ffffff',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+        },
+      },
+    },
+  },
+});
+
+export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <Expertise />
-        <Innovations />
-        <Visionaries />
-        <About />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <Navbar />
+        <Box component="main" sx={{ flexGrow: 1 }}>
+          <Hero />
+          <Services />
+          <Innovations />
+          <Industries />
+          <Partners />
+          <About />
+        </Box>
+        <Footer />
+      </Box>
+    </ThemeProvider>
   );
 }
-
-export default App;

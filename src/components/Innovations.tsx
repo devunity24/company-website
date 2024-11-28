@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Typography, Grid, Card, CardMedia, CardContent, Button, Box } from '@mui/material';
 import { ArrowRight } from 'lucide-react';
 
 const products = [
@@ -21,40 +22,71 @@ const products = [
 
 export default function Innovations() {
   return (
-    <section id="innovations" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto container-padding">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Innovations</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <Box
+      id="innovations"
+      component="section"
+      sx={{
+        py: { xs: 8, md: 12 },
+        backgroundColor: 'background.default',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="h3" component="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+            Innovations
+          </Typography>
+          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 'md', mx: 'auto' }}>
             Discover our cutting-edge products designed to revolutionize your digital landscape.
-          </p>
-        </div>
+          </Typography>
+        </Box>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Grid container spacing={4}>
           {products.map((product, index) => (
-            <div
-              key={index}
-              className="group rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={product.image}
+            <Grid item xs={12} md={4} key={index}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  sx={{
+                    objectFit: 'cover',
+                  }}
                 />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <button className="text-blue-600 font-medium inline-flex items-center group/btn">
-                  Learn More
-                  <ArrowRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h5" component="h3">
+                    {product.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    {product.description}
+                  </Typography>
+                  <Button
+                    endIcon={<ArrowRight />}
+                    sx={{
+                      '&:hover .lucide': {
+                        transform: 'translateX(4px)',
+                        transition: 'transform 0.2s',
+                      },
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
           ))}
-        </div>
-      </div>
-    </section>
+        </Grid>
+      </Container>
+    </Box>
   );
 }

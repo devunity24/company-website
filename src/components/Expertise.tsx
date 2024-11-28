@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Typography, Grid, Box, Paper } from '@mui/material';
 import { Code2, Laptop, Globe, Shield, Cpu, Users } from 'lucide-react';
 
 const services = [
@@ -36,30 +37,53 @@ const services = [
 
 export default function Expertise() {
   return (
-    <section id="expertise" className="section-padding bg-gray-50">
-      <div className="max-w-7xl mx-auto container-padding">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expertise</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <Box
+      id="expertise"
+      component="section"
+      sx={{
+        py: { xs: 8, md: 12 },
+        backgroundColor: 'grey.50',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="h3" component="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+            Our Expertise
+          </Typography>
+          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 'md', mx: 'auto' }}>
             Leveraging cutting-edge technologies to deliver exceptional solutions that drive your business forward.
-          </p>
-        </div>
+          </Typography>
+        </Box>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Grid container spacing={4}>
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <div className="mb-4">
-                <service.icon className="h-10 w-10 text-blue-600 group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 2,
+                  },
+                }}
+              >
+                <Box sx={{ mb: 2 }}>
+                  <service.icon size={40} className="text-blue-600" />
+                </Box>
+                <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 'bold' }}>
+                  {service.title}
+                </Typography>
+                <Typography color="text.secondary">
+                  {service.description}
+                </Typography>
+              </Paper>
+            </Grid>
           ))}
-        </div>
-      </div>
-    </section>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
