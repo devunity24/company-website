@@ -18,7 +18,7 @@ const testimonials = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="why-devunity" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>

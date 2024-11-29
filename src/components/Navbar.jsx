@@ -8,7 +8,7 @@ const navigation = [
   { name: "Products", href: "#products" },
   { name: "Industries", href: "#industries" },
   { name: "Partners", href: "#partners" },
-  { name: "Why Devunity", href: "#about" },
+  { name: "Why Devunity", href: "#why-devunity" },
 ];
 
 export default function Navbar() {
