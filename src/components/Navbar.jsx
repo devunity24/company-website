@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Menu, X, Code2 } from "lucide-react";
+import BreakpointContext from "../context/breakPointContext";
 
 const navigation = [
   { name: "Welcome", href: "#welcome" },
@@ -11,8 +12,8 @@ const navigation = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
   const handleEmail = () => {
-    console.log("call");
     const recipient = "devunity24@gmail.com"; // Replace with your email
     const subject = "Subject of the Email";
     const body = "Hello, this is the body of the email.";
@@ -30,10 +31,10 @@ export default function Navbar() {
               {/* <Code2 className="h-8 w-8 text-blue-600" />
               <span className="text-xl font-bold text-gray-900">Devunity</span> */}
               <img
-                src="/company-website/images/company-logo.png"
+                src="/images/company-logo.png"
                 alt="comapny-logo"
-                width={220}
-                height={45}
+                width={isSmallScreen ? 150 : 210}
+                height={isSmallScreen ? 30 : 40}
               />
             </a>
           </div>

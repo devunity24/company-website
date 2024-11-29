@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import BreakpointContext from "../context/breakPointContext";
 import { Code2, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
+  const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto container-padding py-12">
@@ -11,10 +13,10 @@ export default function Footer() {
               {/* <Code2 className="h-8 w-8 text-blue-500" />
               <span className="text-xl font-bold text-white">Devunity</span> */}
               <img
-                src="/company-website/images/company-logo.png"
+                src="/images/company-logo.png"
                 alt="comapny-logo"
-                width={220}
-                height={45}
+                width={isSmallScreen ? 150 : 210}
+                height={isSmallScreen ? 30 : 40}
               />
             </div>
             <p className="text-gray-400">
