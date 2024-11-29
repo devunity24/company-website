@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import React, { useState, useContext } from "react";
+import { Menu, X, Code2 } from "lucide-react";
+import BreakpointContext from "../context/breakPointContext";
 
 const navigation = [
-  { name: 'Welcome', href: '#welcome' },
-  { name: 'Our Expertise', href: '#expertise' },
-  { name: 'Innovations', href: '#innovations' },
-  { name: 'Our Visionaries', href: '#visionaries' },
-  { name: 'Why Devunity', href: '#about' },
+  { name: "Welcome", href: "#welcome" },
+  { name: "Our Expertise", href: "#expertise" },
+  { name: "Innovations", href: "#innovations" },
+  { name: "Our Visionaries", href: "#visionaries" },
+  { name: "Why Devunity", href: "#about" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
+  const handleEmail = () => {
+    const recipient = "devunity24@gmail.com"; // Replace with your email
+    const subject = "Subject of the Email";
+    const body = "Hello, this is the body of the email.";
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
@@ -18,11 +28,17 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="flex items-center space-x-2">
-              <Code2 className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">Devunity</span>
+              {/* <Code2 className="h-8 w-8 text-blue-600" />
+              <span className="text-xl font-bold text-gray-900">Devunity</span> */}
+              <img
+                src="/images/company-logo.png"
+                alt="comapny-logo"
+                width={isSmallScreen ? 150 : 210}
+                height={isSmallScreen ? 30 : 40}
+              />
             </a>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navigation.map((item) => (
@@ -34,7 +50,10 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+              onClick={() => handleEmail()}
+            >
               Contact Us
             </button>
           </div>
@@ -45,7 +64,11 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-blue-600"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -65,7 +88,10 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
-            <button className="w-full text-left bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">
+            <button
+              className="w-full text-left bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700"
+              onClick={() => handleEmail()}
+            >
               Contact Us
             </button>
           </div>

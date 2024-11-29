@@ -1,15 +1,23 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import BreakpointContext from "../context/breakPointContext";
 import { Code2, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
+  const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto container-padding py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Code2 className="h-8 w-8 text-blue-500" />
-              <span className="text-xl font-bold text-white">Devunity</span>
+              {/* <Code2 className="h-8 w-8 text-blue-500" />
+              <span className="text-xl font-bold text-white">Devunity</span> */}
+              <img
+                src="/images/company-logo.png"
+                alt="comapny-logo"
+                width={isSmallScreen ? 150 : 210}
+                height={isSmallScreen ? 30 : 40}
+              />
             </div>
             <p className="text-gray-400">
               Crafting innovative solutions for tomorrow's challenges.
@@ -34,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-blue-500" />
-                <span>contact@devunity.com</span>
+                <span>devunity24@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-blue-500" />
