@@ -13,7 +13,7 @@ export default function Footer() {
               {/* <Code2 className="h-8 w-8 text-blue-500" />
               <span className="text-xl font-bold text-white">Devunity</span> */}
               <img
-                src="/images/company-logo.png"
+                src="/company-website/images/company-logo.png"
                 alt="comapny-logo"
                 width={isSmallScreen ? 150 : 210}
                 height={isSmallScreen ? 30 : 40}
