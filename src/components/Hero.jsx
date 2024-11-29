@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div id="welcome" className="relative min-h-screen flex items-center">
+    <div id="home" className="relative min-h-screen flex items-center">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-gray-900/90" />
       </div>

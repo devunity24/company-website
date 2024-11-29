@@ -21,7 +21,7 @@ const products = [
 
 export default function Innovations() {
   return (
-    <section id="innovations" className="section-padding bg-white">
+    <section id="products" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Innovations</h2>

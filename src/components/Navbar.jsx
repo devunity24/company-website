@@ -3,10 +3,11 @@ import { Menu, X, Code2 } from "lucide-react";
 import BreakpointContext from "../context/breakPointContext";
 
 const navigation = [
-  { name: "Welcome", href: "#welcome" },
-  { name: "Our Expertise", href: "#expertise" },
-  { name: "Innovations", href: "#innovations" },
-  { name: "Our Visionaries", href: "#visionaries" },
+  { name: "Home", href: "#home" },
+  { name: "Services", href: "#services" },
+  { name: "Products", href: "#products" },
+  { name: "Industries", href: "#industries" },
+  { name: "Partners", href: "#partners" },
   { name: "Why Devunity", href: "#about" },
 ];
 

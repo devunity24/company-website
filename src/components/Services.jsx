@@ -23,7 +23,7 @@ const services = [
   {
     title: "Website Development",
     description:
-      "Boost your online presence with our expert website development services. We design custom, responsive, and visually appealing websites tailored to your business needs. From e-commerce to corporate sites, we ensure your website is user-friendly, SEO-optimized, and mobile-responsive for maximum impact.",
+      "Devunity delivers custom website development solutions that are fast, responsive, and tailored to your business needs. Let us help you create a powerful online presence that drives success!",
     icon: Globe,
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
@@ -31,7 +31,7 @@ const services = [
   {
     title: "Web App Development",
     description:
-      "Boost your business with our expert web app development services. We create custom, scalable, and secure web applications tailored to your needs. From e-commerce platforms like online stores to collaborative tools like project management apps, we deliver seamless user experiences and robust functionality. Whether it's a booking system, social networking site, or real-time analytics dashboard, we ensure your app is responsive, fast, and optimized for growth. Let us turn your ideas into impactful solutions.",
+      "Devunity specializes in cutting-edge web app development, creating seamless, scalable, and secure solutions that empower your business to thrive in the digital world. Let's build your next big idea!",
     icon: Code2,
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80",
@@ -39,7 +39,7 @@ const services = [
   {
     title: "Mobile App Development",
     description:
-      "Transform your business with our mobile app development services. We create custom, user-friendly, and high-performance mobile apps for both iOS and Android. Whether it's a ride-sharing app, fitness tracker, or e-commerce solution, we deliver seamless experiences that drive engagement. Our apps are designed to be fast, secure, and scalable, ensuring your brand stays connected to your audience anytime, anywhere. Let us bring your mobile vision to life with cutting-edge technology and innovation.",
+      "Devunity offers expert mobile app development, crafting intuitive, high-performance apps for iOS and Android. Let's turn your vision into a powerful, user-friendly mobile experience!",
     icon: Smartphone,
     image:
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80",
@@ -47,7 +47,7 @@ const services = [
   {
     title: "Cloud Services",
     description:
-      "Unlock the power of the cloud with our comprehensive cloud solutions. We offer secure, scalable, and cost-effective services to help your business optimize performance and enhance collaboration. Whether it's cloud storage, data backup, or cloud-based software, we design solutions tailored to your needs. Our cloud services ensure seamless integration, improved accessibility, and better resource management. Let us help you streamline operations, scale effortlessly, and stay ahead in today's fast-paced digital world.",
+      "Devunity provides reliable cloud services, offering scalable solutions for storage, computing, and security. Enhance your business with seamless, flexible cloud infrastructure tailored to your needs!",
     icon: Cloud,
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
@@ -55,7 +55,7 @@ const services = [
   {
     title: "DevOps",
     description:
-      "Accelerate your development cycle with our DevOps services. We integrate development and operations to enhance collaboration, automation, and efficiency. Our DevOps solutions streamline deployment, improve software quality, and enable faster delivery of updates. From continuous integration to automated testing and monitoring, we ensure your processes are optimized for speed, reliability, and scalability. Let us help you build, deploy, and manage applications seamlessly, empowering your team to innovate and respond faster to market needs.",
+      "Devunity offers expert DevOps services, streamlining your development and operations for faster, more efficient deployments. Optimize workflows, improve collaboration, and scale your business seamlessly!",
     icon: Settings,
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80",
@@ -63,7 +63,7 @@ const services = [
   {
     title: "UI/UX Design",
     description:
-      "Transform your digital experience with our expert UI/UX design services! We create intuitive, visually stunning interfaces that captivate users and drive engagement. From sleek mobile apps to dynamic websites, we design with your goals in mind. Let us bring your vision to life with user-centered designs!",
+      "Devunity creates stunning UI/UX designs that deliver seamless, engaging user experiences. We craft intuitive interfaces that captivate users and elevate your brand to new heights!",
     icon: Palette,
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80",
@@ -71,15 +71,23 @@ const services = [
   {
     title: "AI & Machine Learning",
     description:
-      "Unlock the power of AI & Machine Learning with our cutting-edge solutions! We build intelligent systems that automate tasks, optimize processes, and predict trends. Whether it's predictive analytics, natural language processing, or personalized recommendations, we help your business stay ahead of the curve!",
+      "Devunity harnesses the power of AI & Machine Learning to drive innovation. We create smart, data-driven solutions that optimize processes, enhance decision-making, and boost your business performance!",
     icon: Brain,
     image:
       "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80",
   },
   {
+    title: "Customized Software Development",
+    description:
+      "Devunity specializes in custom software development, delivering tailored solutions that perfectly align with your business needs. We create scalable, efficient, and innovative software to drive your success!",
+    icon: Code2,
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+  },
+  {
     title: "IT Infrastructure",
     description:
-      "Strengthen your business with robust IT infrastructure solutions! We provide scalable, secure, and efficient systems that ensure seamless connectivity, data management, and operational efficiency. From cloud services to network setup and cybersecurity, we build the foundation for your digital success!",
+      "Devunity offers robust IT infrastructure solutions, providing scalable, secure, and efficient systems that support your business growth. Trust us to optimize and manage your technology for peak performance!",
     icon: Server,
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
