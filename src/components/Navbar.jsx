@@ -31,7 +31,7 @@ export default function Navbar() {
               {/* <Code2 className="h-8 w-8 text-blue-600" />
               <span className="text-xl font-bold text-gray-900">Devunity</span> */}
               <img
-                src="/images/company-logo.png"
+                src="/company-website/images/company-logo.png"
                 alt="comapny-logo"
                 width={isSmallScreen ? 150 : 210}
                 height={isSmallScreen ? 30 : 40}
