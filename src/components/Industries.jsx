@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import BreakpointContext from "../context/breakPointContext";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import {
   Container,
   Typography,
@@ -7,7 +9,6 @@ import {
   Card,
   CardContent,
   Box,
-  CardMedia,
 } from "@mui/material";
 import {
   Building,
@@ -22,54 +23,52 @@ const industries = [
   {
     title: "Finance & Banking",
     description:
-      "Devunity offers tailored solutions for the Finance & Banking industry, enhancing operational efficiency, security, and customer experience. By leveraging advanced technologies like AI, blockchain, and data analytics, Devunity supports seamless transactions, fraud detection, risk management, and compliance with regulations. Their innovative software solutions streamline processes, improve decision-making, and enable personalized services, driving growth and competitiveness in the evolving financial landscape.",
+      "offers tailored solutions for the Finance & Banking industry, enhancing operational efficiency, security, and customer experience. By leveraging advanced technologies like AI, blockchain, and data analytics, Devunity supports seamless transactions, fraud detection, risk management, and compliance with regulations. Their innovative software solutions streamline processes, improve decision-making, and enable personalized services, driving growth and competitiveness in the evolving financial landscape.",
     icon: LandmarkIcon,
     image: "/company-website/images/industry/finance-banking.avif",
   },
   {
     title: "Healthcare",
     description:
-      "Devunity delivers innovative solutions for the Healthcare industry, focusing on improving patient care, operational efficiency, and data security. Their expertise in AI, IoT, and data analytics enables real-time health monitoring, predictive diagnostics, and personalized treatments. By streamlining administrative tasks and ensuring regulatory compliance, Devunity enhances workflow automation, reduces costs, and supports better clinical outcomes, helping healthcare providers deliver superior services in a rapidly evolving landscape.",
+      "delivers innovative solutions for the Healthcare industry, focusing on improving patient care, operational efficiency, and data security. Their expertise in AI, IoT, and data analytics enables real-time health monitoring, predictive diagnostics, and personalized treatments. By streamlining administrative tasks and ensuring regulatory compliance, Devunity enhances workflow automation, reduces costs, and supports better clinical outcomes, helping healthcare providers deliver superior services in a rapidly evolving landscape.",
     icon: CircleUserRound,
     image: "/company-website/images/industry/health-care.avif",
   },
   {
     title: "Retail & E-commerce",
     description:
-      "Devunity offers cutting-edge solutions for the Retail & E-commerce industry, optimizing customer experiences and driving operational efficiency. By leveraging AI, big data, and automation, they help businesses personalize recommendations, improve inventory management, and streamline supply chains. Their solutions enable seamless omnichannel strategies, secure payment processing, and real-time analytics, enhancing customer engagement and boosting sales while ensuring scalability and competitiveness in a dynamic market.",
+      "offers cutting-edge solutions for the Retail & E-commerce industry, optimizing customer experiences and driving operational efficiency. By leveraging AI, big data, and automation, they help businesses personalize recommendations, improve inventory management, and streamline supply chains. Their solutions enable seamless omnichannel strategies, secure payment processing, and real-time analytics, enhancing customer engagement and boosting sales while ensuring scalability and competitiveness in a dynamic market.",
     icon: Store,
     image: "/company-website/images/industry/retail-industry.avif",
   },
   {
     title: "Manufacturing",
     description:
-      "Devunity provides advanced solutions for the Manufacturing industry, focusing on optimizing production processes and improving operational efficiency. By integrating IoT, AI, and data analytics, they enable real-time monitoring, predictive maintenance, and smart automation, reducing downtime and enhancing productivity. Their solutions also help with supply chain management, quality control, and inventory optimization, empowering manufacturers to streamline operations, reduce costs, and stay competitive in a rapidly evolving market.",
+      "provides advanced solutions for the Manufacturing industry, focusing on optimizing production processes and improving operational efficiency. By integrating IoT, AI, and data analytics, they enable real-time monitoring, predictive maintenance, and smart automation, reducing downtime and enhancing productivity. Their solutions also help with supply chain management, quality control, and inventory optimization, empowering manufacturers to streamline operations, reduce costs, and stay competitive in a rapidly evolving market.",
     icon: Building,
     image: "/company-website/images/industry/manufacturing.jpg",
   },
   {
     title: "Travel & Hospitality",
     description:
-      "Devunity offers tailored solutions for the Travel & Hospitality industry, enhancing customer experiences and operational efficiency. By leveraging AI, data analytics, and automation, they help businesses personalize services, optimize booking systems, and streamline operations. Their solutions enable seamless customer interactions, dynamic pricing, and improved resource management. Devunity also enhances data security, supports real-time analytics, and drives growth by delivering innovative, scalable solutions for the evolving travel sector.",
+      "offers tailored solutions for the Travel & Hospitality industry, enhancing customer experiences and operational efficiency. By leveraging AI, data analytics, and automation, they help businesses personalize services, optimize booking systems, and streamline operations. Their solutions enable seamless customer interactions, dynamic pricing, and improved resource management. Devunity also enhances data security, supports real-time analytics, and drives growth by delivering innovative, scalable solutions for the evolving travel sector.",
     icon: PlaneTakeoff,
     image: "/company-website/images/industry/travel-hospitality.avif",
   },
   {
     title: "Professional Services",
     description:
-      "Devunity offers comprehensive solutions for the Professional Services industry, helping firms streamline operations, enhance client interactions, and drive business growth. Their expertise in AI, automation, and data analytics enables improved project management, resource allocation, and decision-making. Devunity’s solutions facilitate seamless collaboration, optimize billing systems, and ensure compliance with industry regulations. By delivering tailored, scalable technologies, they empower professional service firms to enhance efficiency and provide exceptional client experiences.",
+      "offers comprehensive solutions for the Professional Services industry, helping firms streamline operations, enhance client interactions, and drive business growth. Their expertise in AI, automation, and data analytics enables improved project management, resource allocation, and decision-making. Devunity’s solutions facilitate seamless collaboration, optimize billing systems, and ensure compliance with industry regulations. By delivering tailored, scalable technologies, they empower professional service firms to enhance efficiency and provide exceptional client experiences.",
     icon: Briefcase,
     image: "/company-website/images/industry/proffesional-service.avif",
   },
 ];
 function CardMediaContent({ image, title }) {
   return (
-    <CardMedia
+    <LazyLoadImage
       sx={{ padding: "16px" }}
-      component="img"
-      height="160"
-      width="160"
-      image={image}
+      src={image}
+      effect="blur"
       alt={title}
     />
   );
@@ -84,7 +83,9 @@ function CardSummary({ icon, title, description }) {
           {title}
         </Typography>
       </Box>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-gray-600">
+        <strong>Devunity</strong>&nbsp;{description}
+      </p>
       {/* <Typography variant="body2" color="text.secondary">
         {description}
       </Typography> */}
