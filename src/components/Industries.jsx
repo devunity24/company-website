@@ -83,7 +83,7 @@ function CardSummary({ icon, title, description }) {
           {title}
         </Typography>
       </Box>
-      <p className="text-gray-600">
+      <p className="text-gray-600 text-justify">
         <strong>Devunity</strong>&nbsp;{description}
       </p>
       {/* <Typography variant="body2" color="text.secondary">
