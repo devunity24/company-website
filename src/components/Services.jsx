@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   Box,
-  CardMedia,
 } from "@mui/material";
 import {
   Globe,
@@ -18,7 +17,8 @@ import {
   Brain,
   Server,
 } from "lucide-react";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const services = [
   {
     title: "Website Development",
@@ -44,42 +44,42 @@ const services = [
   {
     title: "Cloud Services",
     description:
-      "Devunity provides reliable cloud services, offering scalable solutions for storage, computing, and security. Enhance your business with seamless, flexible cloud infrastructure tailored to your needs!",
+      "provides reliable cloud services, offering scalable solutions for storage, computing, and security. Enhance your business with seamless, flexible cloud infrastructure tailored to your needs!",
     icon: Cloud,
     image: "/company-website/images/services/cloud-service.avif",
   },
   {
     title: "DevOps",
     description:
-      "Devunity offers expert DevOps services, streamlining your development and operations for faster, more efficient deployments. Optimize workflows, improve collaboration, and scale your business seamlessly!",
+      "offers expert DevOps services, streamlining your development and operations for faster, more efficient deployments. Optimize workflows, improve collaboration, and scale your business seamlessly!",
     icon: Settings,
     image: "/company-website/images/services/dev-ops.avif",
   },
   {
     title: "UI/UX Design",
     description:
-      "Devunity creates stunning UI/UX designs that deliver seamless, engaging user experiences. We craft intuitive interfaces that captivate users and elevate your brand to new heights!",
+      "creates stunning UI/UX designs that deliver seamless, engaging user experiences. We craft intuitive interfaces that captivate users and elevate your brand to new heights!",
     icon: Palette,
     image: "/company-website/images/services/ui-ux.avif",
   },
   {
     title: "AI & Machine Learning",
     description:
-      "Devunity harnesses the power of AI & Machine Learning to drive innovation. We create smart, data-driven solutions that optimize processes, enhance decision-making, and boost your business performance!",
+      "harnesses the power of AI & Machine Learning to drive innovation. We create smart, data-driven solutions that optimize processes, enhance decision-making, and boost your business performance!",
     icon: Brain,
     image: "/company-website/images/services/ai-ml.avif",
   },
   {
     title: "Customized Software Development",
     description:
-      "Devunity specializes in custom software development, delivering tailored solutions that perfectly align with your business needs. We create scalable, efficient, and innovative software to drive your success!",
+      "specializes in custom software development, delivering tailored solutions that perfectly align with your business needs. We create scalable, efficient, and innovative software to drive your success!",
     icon: Code2,
     image: "/company-website/images/services/customized-development.avif",
   },
   {
     title: "IT Infrastructure",
     description:
-      "Devunity offers robust IT infrastructure solutions, providing scalable, secure, and efficient systems that support your business growth. Trust us to optimize and manage your technology for peak performance!",
+      "offers robust IT infrastructure solutions, providing scalable, secure, and efficient systems that support your business growth. Trust us to optimize and manage your technology for peak performance!",
     icon: Server,
     image: "/company-website/images/services/it-infastructure.avif",
   },
@@ -127,10 +127,10 @@ export default function Services() {
                   },
                 }}
               >
-                <CardMedia
-                  component="img"
+                <LazyLoadImage
                   height="160"
-                  image={service.image}
+                  src={service.image}
+                  effect="blur"
                   alt={service.title}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
@@ -140,7 +140,10 @@ export default function Services() {
                       {service.title}
                     </Typography>
                   </Box>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600">
+                    <strong>Devunity</strong>&nbsp;
+                    {service.description}
+                  </p>
                   {/* <Typography variant="body2" color="text.secondary">
                     {service.description}
                   </Typography> */}
