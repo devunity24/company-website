@@ -25,72 +25,63 @@ const services = [
     description:
       "Devunity delivers custom website development solutions that are fast, responsive, and tailored to your business needs. Let us help you create a powerful online presence that drives success!",
     icon: Globe,
-    image:
-      "/company-website/images/services/website-develop.avif",
+    image: "/company-website/images/services/website-development-new.jpg",
   },
   {
     title: "Web App Development",
     description:
       "Devunity specializes in cutting-edge web app development, creating seamless, scalable, and secure solutions that empower your business to thrive in the digital world. Let's build your next big idea!",
     icon: Code2,
-    image:
-      "/company-website/images/services/web-app.avif",
+    image: "/company-website/images/services/web-app.avif",
   },
   {
     title: "Mobile App Development",
     description:
       "Devunity offers expert mobile app development, crafting intuitive, high-performance apps for iOS and Android. Let's turn your vision into a powerful, user-friendly mobile experience!",
     icon: Smartphone,
-    image:
-      "/company-website/images/services/mobile-app.avif",
+    image: "/company-website/images/services/mobile-app.avif",
   },
   {
     title: "Cloud Services",
     description:
       "Devunity provides reliable cloud services, offering scalable solutions for storage, computing, and security. Enhance your business with seamless, flexible cloud infrastructure tailored to your needs!",
     icon: Cloud,
-    image:
-      "/company-website/images/services/cloud-service.avif",
+    image: "/company-website/images/services/cloud-service.avif",
   },
   {
     title: "DevOps",
     description:
       "Devunity offers expert DevOps services, streamlining your development and operations for faster, more efficient deployments. Optimize workflows, improve collaboration, and scale your business seamlessly!",
     icon: Settings,
-    image:
-      "/company-website/images/services/dev-ops.avif",
+    image: "/company-website/images/services/dev-ops.avif",
   },
   {
     title: "UI/UX Design",
     description:
       "Devunity creates stunning UI/UX designs that deliver seamless, engaging user experiences. We craft intuitive interfaces that captivate users and elevate your brand to new heights!",
     icon: Palette,
-    image:
-      "/company-website/images/services/ui-ux.avif",
+    image: "/company-website/images/services/ui-ux.avif",
   },
   {
     title: "AI & Machine Learning",
     description:
       "Devunity harnesses the power of AI & Machine Learning to drive innovation. We create smart, data-driven solutions that optimize processes, enhance decision-making, and boost your business performance!",
     icon: Brain,
-    image:
-      "/company-website/images/services/ai-ml.avif",
+    image: "/company-website/images/services/ai-ml.avif",
   },
   {
     title: "Customized Software Development",
     description:
       "Devunity specializes in custom software development, delivering tailored solutions that perfectly align with your business needs. We create scalable, efficient, and innovative software to drive your success!",
     icon: Code2,
-    image:
-      "/company-website/images/services/website-develop.avif",
+    image: "/company-website/images/services/customized-development.avif",
   },
   {
     title: "IT Infrastructure",
     description:
       "Devunity offers robust IT infrastructure solutions, providing scalable, secure, and efficient systems that support your business growth. Trust us to optimize and manage your technology for peak performance!",
     icon: Server,
-    image:
-      "/company-website/images/services/it-infastructure.avif",
+    image: "/company-website/images/services/it-infastructure.avif",
   },
 ];
 
@@ -149,9 +140,10 @@ export default function Services() {
                       {service.title}
                     </Typography>
                   </Box>
-                  <Typography variant="body2" color="text.secondary">
+                  <p className="text-gray-600">{service.description}</p>
+                  {/* <Typography variant="body2" color="text.secondary">
                     {service.description}
-                  </Typography>
+                  </Typography> */}
                 </CardContent>
               </Card>
             </Grid>

@@ -22,42 +22,42 @@ const industries = [
   {
     title: "Finance & Banking",
     description:
-      "Delivering secure, compliant, and user-friendly fintech solutions. Whether it's digital banking, risk management, or investment tools, we provide technologies that foster trust and growth in the financial sector.",
+      "Devunity offers tailored solutions for the Finance & Banking industry, enhancing operational efficiency, security, and customer experience. By leveraging advanced technologies like AI, blockchain, and data analytics, Devunity supports seamless transactions, fraud detection, risk management, and compliance with regulations. Their innovative software solutions streamline processes, improve decision-making, and enable personalized services, driving growth and competitiveness in the evolving financial landscape.",
     icon: LandmarkIcon,
     image: "/company-website/images/industry/finance-banking.avif",
   },
   {
     title: "Healthcare",
     description:
-      "Enhancing patient care and operational efficiency with secure, compliant, and robust healthcare solutions. From patient management systems to telemedicine platforms, we bridge the gap between care providers and patients.",
+      "Devunity delivers innovative solutions for the Healthcare industry, focusing on improving patient care, operational efficiency, and data security. Their expertise in AI, IoT, and data analytics enables real-time health monitoring, predictive diagnostics, and personalized treatments. By streamlining administrative tasks and ensuring regulatory compliance, Devunity enhances workflow automation, reduces costs, and supports better clinical outcomes, helping healthcare providers deliver superior services in a rapidly evolving landscape.",
     icon: CircleUserRound,
     image: "/company-website/images/industry/health-care.avif",
   },
   {
     title: "Retail & E-commerce",
     description:
-      "Empowering retail and e-commerce businesses with dynamic platforms. We create intuitive customer experiences, improve supply chain efficiency, and enable data-driven decision-making.",
+      "Devunity offers cutting-edge solutions for the Retail & E-commerce industry, optimizing customer experiences and driving operational efficiency. By leveraging AI, big data, and automation, they help businesses personalize recommendations, improve inventory management, and streamline supply chains. Their solutions enable seamless omnichannel strategies, secure payment processing, and real-time analytics, enhancing customer engagement and boosting sales while ensuring scalability and competitiveness in a dynamic market.",
     icon: Store,
     image: "/company-website/images/industry/retail-industry.avif",
   },
   {
     title: "Manufacturing",
     description:
-      "Driving operational excellence and automation in manufacturing. Our solutions support smart factories, inventory management, and production planning, ensuring streamlined operations and reduced costs.",
+      "Devunity provides advanced solutions for the Manufacturing industry, focusing on optimizing production processes and improving operational efficiency. By integrating IoT, AI, and data analytics, they enable real-time monitoring, predictive maintenance, and smart automation, reducing downtime and enhancing productivity. Their solutions also help with supply chain management, quality control, and inventory optimization, empowering manufacturers to streamline operations, reduce costs, and stay competitive in a rapidly evolving market.",
     icon: Building,
     image: "/company-website/images/industry/manufacturing.jpg",
   },
   {
     title: "Travel & Hospitality",
     description:
-      "Transforming the travel experience with technology that delights customers. We develop systems for booking, customer engagement, and operational optimization to help businesses provide memorable journeys.",
+      "Devunity offers tailored solutions for the Travel & Hospitality industry, enhancing customer experiences and operational efficiency. By leveraging AI, data analytics, and automation, they help businesses personalize services, optimize booking systems, and streamline operations. Their solutions enable seamless customer interactions, dynamic pricing, and improved resource management. Devunity also enhances data security, supports real-time analytics, and drives growth by delivering innovative, scalable solutions for the evolving travel sector.",
     icon: PlaneTakeoff,
     image: "/company-website/images/industry/travel-hospitality.avif",
   },
   {
     title: "Professional Services",
     description:
-      "We streamline workflows and enhance productivity for professional services firms. From project management to client engagement, our solutions ensure efficiency, scalability, and seamless collaboration.",
+      "Devunity offers comprehensive solutions for the Professional Services industry, helping firms streamline operations, enhance client interactions, and drive business growth. Their expertise in AI, automation, and data analytics enables improved project management, resource allocation, and decision-making. Devunity’s solutions facilitate seamless collaboration, optimize billing systems, and ensure compliance with industry regulations. By delivering tailored, scalable technologies, they empower professional service firms to enhance efficiency and provide exceptional client experiences.",
     icon: Briefcase,
     image: "/company-website/images/industry/proffesional-service.avif",
   },
@@ -84,9 +84,10 @@ function CardSummary({ icon, title, description }) {
           {title}
         </Typography>
       </Box>
-      <Typography variant="body2" color="text.secondary">
+      <p className="text-gray-600">{description}</p>
+      {/* <Typography variant="body2" color="text.secondary">
         {description}
-      </Typography>
+      </Typography> */}
     </CardContent>
   );
 }
