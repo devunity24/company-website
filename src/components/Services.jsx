@@ -70,7 +70,7 @@ const services = [
     image: "/company-website/images/services/ai-ml.avif",
   },
   {
-    title: "Customized Software Development",
+    title: "Custom Software Development",
     description:
       "specializes in custom software development, delivering tailored solutions that perfectly align with your business needs. We create scalable, efficient, and innovative software to drive your success!",
     icon: Code2,
