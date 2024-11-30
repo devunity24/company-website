@@ -62,12 +62,12 @@ export default function Innovations() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Innovations
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            <strong>Devunity NetSol</strong>&nbsp;provides innovative solutions for chain networking
-            investment businesses, enabling agents to expand their potential. By
-            streamlining investment processes and enhancing efficiency, agents
-            can grow their network, attract more clients, and boost earnings,
-            leading to sustainable business growth.
+          <p className="text-lg text-gray-600">
+            <strong>Devunity NetSol</strong>&nbsp;provides innovative solutions
+            for chain networking investment businesses, enabling agents to
+            expand their potential. By streamlining investment processes and
+            enhancing efficiency, agents can grow their network, attract more
+            clients, and boost earnings, leading to sustainable business growth.
           </p>
         </div>
 
