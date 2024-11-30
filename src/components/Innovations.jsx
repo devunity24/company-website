@@ -5,17 +5,17 @@ const products = [
   {
     name: 'DevFlow',
     description: 'Streamline your development workflow with our AI-powered project management solution.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80'
+    image: '/company-website/images/innovation/devflow.avif'
   },
   {
     name: 'CloudGuard',
     description: 'Enterprise-grade cloud security and monitoring platform for modern infrastructure.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80'
+    image: '/company-website/images/innovation/cloud-guard.avif'
   },
   {
     name: 'DataSense',
     description: 'Advanced analytics and visualization platform for data-driven decision making.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+    image: '/company-website/images/innovation/data-sense.avif'
   }
 ];
 

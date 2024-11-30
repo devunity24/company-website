@@ -5,22 +5,22 @@ const partners = [
   {
     name: 'TechCorp International',
     description: 'Global technology solutions provider',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80'
+    image: '/company-website/images/partner/tech-corp.avif'
   },
   {
     name: 'InnovateSoft',
     description: 'Innovation-driven software development',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80'
+    image: '/company-website/images/partner/innovate-soft.avif'
   },
   {
     name: 'CloudTech Solutions',
     description: 'Cloud infrastructure specialists',
-    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80'
+    image: '/company-website/images/partner/cloud-tech.avif'
   },
   {
     name: 'DataSense Analytics',
     description: 'Advanced analytics and AI solutions',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80'
+    image: '/company-website/images/services/web-app.avif'
   }
 ];
 

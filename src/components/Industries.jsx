@@ -24,43 +24,42 @@ const industries = [
     description:
       "Delivering secure, compliant, and user-friendly fintech solutions. Whether it's digital banking, risk management, or investment tools, we provide technologies that foster trust and growth in the financial sector.",
     icon: LandmarkIcon,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/finance-banking.avif",
   },
   {
     title: "Healthcare",
-    description: "Enhancing patient care and operational efficiency with secure, compliant, and robust healthcare solutions. From patient management systems to telemedicine platforms, we bridge the gap between care providers and patients.",
+    description:
+      "Enhancing patient care and operational efficiency with secure, compliant, and robust healthcare solutions. From patient management systems to telemedicine platforms, we bridge the gap between care providers and patients.",
     icon: CircleUserRound,
-    image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/health-care.avif",
   },
   {
     title: "Retail & E-commerce",
-    description: "Empowering retail and e-commerce businesses with dynamic platforms. We create intuitive customer experiences, improve supply chain efficiency, and enable data-driven decision-making.",
+    description:
+      "Empowering retail and e-commerce businesses with dynamic platforms. We create intuitive customer experiences, improve supply chain efficiency, and enable data-driven decision-making.",
     icon: Store,
-    image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/retail-industry.avif",
   },
   {
     title: "Manufacturing",
-    description: "Driving operational excellence and automation in manufacturing. Our solutions support smart factories, inventory management, and production planning, ensuring streamlined operations and reduced costs.",
+    description:
+      "Driving operational excellence and automation in manufacturing. Our solutions support smart factories, inventory management, and production planning, ensuring streamlined operations and reduced costs.",
     icon: Building,
-    image:
-      "https://images.unsplash.com/photo-1565465295423-68c959f89282?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/manufacturing.jpg",
   },
   {
     title: "Travel & Hospitality",
-    description: "Transforming the travel experience with technology that delights customers. We develop systems for booking, customer engagement, and operational optimization to help businesses provide memorable journeys.",
+    description:
+      "Transforming the travel experience with technology that delights customers. We develop systems for booking, customer engagement, and operational optimization to help businesses provide memorable journeys.",
     icon: PlaneTakeoff,
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/travel-hospitality.avif",
   },
   {
     title: "Professional Services",
-    description: "We streamline workflows and enhance productivity for professional services firms. From project management to client engagement, our solutions ensure efficiency, scalability, and seamless collaboration.",
+    description:
+      "We streamline workflows and enhance productivity for professional services firms. From project management to client engagement, our solutions ensure efficiency, scalability, and seamless collaboration.",
     icon: Briefcase,
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80",
+    image: "/company-website/images/industry/proffesional-service.avif",
   },
 ];
 function CardMediaContent({ image, title }) {
@@ -157,7 +156,8 @@ export default function Industries() {
         {industries.map((industry, index) => (
           <Card
             key={index}
-            className="my-3"
+            elevation={0}
+            className="my-3 hover:shadow-md"
             sx={{
               height: "100%",
               display: "flex",
@@ -167,7 +167,7 @@ export default function Industries() {
               },
             }}
           >
-            <Grid2 container className="w-full border" sx={{ display: "flex" }}>
+            <Grid2 container className="w-full" sx={{ display: "flex" }}>
               {/* // left content block */}
               <Grid2
                 size={{
