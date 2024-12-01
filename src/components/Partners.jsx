@@ -31,7 +31,7 @@ export default function Partners() {
       component="section"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: "grey.50",
+        backgroundColor: "background.default",
       }}
     >
       <Container maxWidth="lg">
@@ -54,7 +54,7 @@ export default function Partners() {
 
         <Grid container spacing={4} sx={{ justifyContent: "center" }}>
           {partners.map((partner, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={3} lg={6} key={index}>
               <Card
                 onClick={() => window.open(partner.url, "_blank")}
                 sx={{
