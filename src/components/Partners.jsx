@@ -52,7 +52,7 @@ export default function Partners() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ justifyContent: "center" }}>
           {partners.map((partner, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <Card
