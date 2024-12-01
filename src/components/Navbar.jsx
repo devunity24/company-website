@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import BreakpointContext from "../context/breakPointContext";
 
 const navigation = [
   { name: "Home", href: "#home" },
+  { name: "Why Devunity", href: "#why-devunity" },
   { name: "Services", href: "#services" },
   { name: "Products", href: "#products" },
   { name: "Industries", href: "#industries" },
   { name: "Partners", href: "#partners" },
-  { name: "Why Devunity", href: "#why-devunity" },
 ];
 
 export default function Navbar() {
@@ -24,18 +24,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="fixed w-full bg-white backdrop-blur-sm z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
+        <div className="flex justify-between h-full">
           <div className="flex items-center">
             <a href="#" className="flex items-center space-x-2">
               {/* <Code2 className="h-8 w-8 text-blue-600" />
               <span className="text-xl font-bold text-gray-900">Devunity</span> */}
               <img
-                src="/company-website/images/company-logo.png"
+                src="/company-website/images/company-logo2.png"
                 alt="comapny-logo"
-                width={isSmallScreen ? 150 : 210}
-                height={isSmallScreen ? 30 : 40}
+                width={isSmallScreen ? 160 : 210}
+                height={isSmallScreen ? 40 : 60}
               />
             </a>
           </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors md:text-lg"
               >
                 {item.name}
               </a>

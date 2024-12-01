@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import BreakpointContext from "../context/breakPointContext";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import {
   Container,
   Typography,
@@ -17,9 +17,17 @@ import {
   Store,
   LandmarkIcon,
   PlaneTakeoff,
+  GraduationCap,
 } from "lucide-react";
 
 const industries = [
+  {
+    title: "Education",
+    description:
+      "provides innovative solutions for the Education industry, enhancing both teaching and learning experiences. Through AI, e-learning platforms, and data analytics, they enable personalized education, improving student engagement and outcomes. Their solutions support virtual classrooms, streamline administrative tasks, and ensure secure data management. By integrating advanced technologies, Devunity empowers educational institutions to offer flexible, scalable, and efficient learning environments that cater to diverse needs.",
+    icon: GraduationCap,
+    image: "/company-website/images/industry/education.jpg",
+  },
   {
     title: "Finance & Banking",
     description:
@@ -134,7 +142,7 @@ export default function Industries() {
       component="section"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: "background.default",
+        backgroundColor: "grey.50",
       }}
     >
       <Container maxWidth="lg">

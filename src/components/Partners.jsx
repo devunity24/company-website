@@ -11,24 +11,16 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 const partners = [
   {
-    name: "TechCorp International",
+    name: "Pinger Man",
     description: "Global technology solutions provider",
-    image: "/company-website/images/partner/tech-corp.avif",
+    image: "/company-website/images/partner/pinger_man.jpg",
+    url: "https://pingerman.com/"
   },
   {
-    name: "InnovateSoft",
+    name: "Maxotek",
     description: "Innovation-driven software development",
-    image: "/company-website/images/partner/innovate-soft.avif",
-  },
-  {
-    name: "CloudTech Solutions",
-    description: "Cloud infrastructure specialists",
-    image: "/company-website/images/partner/cloud-tech.avif",
-  },
-  {
-    name: "DataSense Analytics",
-    description: "Advanced analytics and AI solutions",
-    image: "/company-website/images/services/web-app.avif",
+    image: "/company-website/images/partner/maxotek.jpg",
+    url: "https://maxotek.com/"
   },
 ];
 
@@ -39,7 +31,7 @@ export default function Partners() {
       component="section"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: "grey.50",
+        backgroundColor: "background.default",
       }}
     >
       <Container maxWidth="lg">
@@ -60,10 +52,11 @@ export default function Partners() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ justifyContent: "center" }}>
           {partners.map((partner, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={3} lg={6} key={index}>
               <Card
+                onClick={() => window.open(partner.url, "_blank")}
                 sx={{
                   height: "100%",
                   display: "flex",
@@ -72,6 +65,7 @@ export default function Partners() {
                   "&:hover": {
                     transform: "translateY(-8px)",
                   },
+                  cursor: "pointer",
                 }}
               >
                 <LazyLoadImage

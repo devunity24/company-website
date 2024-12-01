@@ -23,13 +23,13 @@ function App() {
           <Navbar />
           <main>
             <Hero />
+            <About />
             <Services />
             {/* <Expertise /> */}
             <Innovations />
             <Industries />
             <Partners />
             {/* <Visionaries /> */}
-            <About />
           </main>
           <Footer />
         </div>
