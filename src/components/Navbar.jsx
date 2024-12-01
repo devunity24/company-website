@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Menu, X } from "lucide-react";
 import BreakpointContext from "../context/breakPointContext";
+import { Modal } from "./modal/modal.jsx";
+import { DynamicForm } from "./forms/DynamicForm.jsx";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -10,10 +12,51 @@ const navigation = [
   { name: "Industries", href: "#industries" },
   { name: "Partners", href: "#partners" },
 ];
+const contactFormConfig = {
+  fields: [
+    {
+      name: 'name',
+      label: 'Name',
+      type: 'text',
+      placeholder: 'Enter your name',
+      required: true,
+      validation: {
+        minLength: 2,
+        message: 'Name must be at least 2 characters',
+      },
+    },
+    {
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      placeholder: 'Enter your email',
+      required: true,
+    },
+    {
+      name: 'message',
+      label: 'Message',
+      type: 'textarea',
+      placeholder: 'Enter your message',
+      required: true,
+      validation: {
+        minLength: 10,
+        message: 'Message must be at least 10 characters',
+      },
+    },
+  ],
+  submitLabel: 'Send Message',
+};
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleContactSubmit = (data) => {
+    console.log("Contact Form Data:", data);
+    setIsContactModalOpen(false);
+  };
+
   const handleEmail = () => {
     const recipient = "devunity24@gmail.com"; // Replace with your email
     const subject = "Subject of the Email";
@@ -53,7 +96,7 @@ export default function Navbar() {
             ))}
             <button
               className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
-              onClick={() => handleEmail()}
+              onClick={() => setIsContactModalOpen(true)}
             >
               Contact Us
             </button>
@@ -91,13 +134,24 @@ export default function Navbar() {
             ))}
             <button
               className="w-full text-left bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700"
-              onClick={() => handleEmail()}
+              onClick={() => setIsContactModalOpen(true)}
             >
               Contact Us
             </button>
           </div>
         </div>
       )}
+
+      <Modal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Contact Us"
+      >
+        <DynamicForm
+          config={contactFormConfig}
+          onSubmit={handleContactSubmit}
+        />
+      </Modal>
     </nav>
   );
 }
