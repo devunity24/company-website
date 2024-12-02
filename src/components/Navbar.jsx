@@ -3,6 +3,11 @@ import { Menu, X } from "lucide-react";
 import BreakpointContext from "../context/breakPointContext";
 import { Modal } from "./modal/modal.jsx";
 import { DynamicForm } from "./forms/DynamicForm.jsx";
+import emailjs from "emailjs-com";
+
+const SERVICE_ID = "service_xyc8gf3";
+const TEMPLATE_ID = "template_vx66aid";
+const PUBLIC_KEY = "rxUNISFEIkAsf8Beu";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -15,36 +20,36 @@ const navigation = [
 const contactFormConfig = {
   fields: [
     {
-      name: 'name',
-      label: 'Name',
-      type: 'text',
-      placeholder: 'Enter your name',
+      name: "name",
+      label: "Name",
+      type: "text",
+      placeholder: "Enter your name",
       required: true,
       validation: {
         minLength: 2,
-        message: 'Name must be at least 2 characters',
+        message: "Name must be at least 2 characters",
       },
     },
     {
-      name: 'email',
-      label: 'Email',
-      type: 'email',
-      placeholder: 'Enter your email',
+      name: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email",
       required: true,
     },
     {
-      name: 'message',
-      label: 'Message',
-      type: 'textarea',
-      placeholder: 'Enter your message',
+      name: "message",
+      label: "Message",
+      type: "textarea",
+      placeholder: "Enter your message",
       required: true,
       validation: {
         minLength: 10,
-        message: 'Message must be at least 10 characters',
+        message: "Message must be at least 10 characters",
       },
     },
   ],
-  submitLabel: 'Send Message',
+  submitLabel: "Send Message",
 };
 
 export default function Navbar() {
@@ -54,6 +59,16 @@ export default function Navbar() {
 
   const handleContactSubmit = (data) => {
     console.log("Contact Form Data:", data);
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY).then(
+      (result) => {
+        console.log(result.text);
+        alert("Message Sent Successfully");
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Something went wrong!");
+      }
+    );
     setIsContactModalOpen(false);
   };
 
