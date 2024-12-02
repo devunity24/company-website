@@ -29,7 +29,7 @@ export default function Hero() {
             </button>
             <a href="#services">
               <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-white/20 transition-all">
-                Our Solutions
+                Our Services
               </button>
             </a>
           </div>

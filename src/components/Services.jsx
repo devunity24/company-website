@@ -23,21 +23,21 @@ const services = [
   {
     title: "Website Development",
     description:
-      "Devunity delivers custom website development solutions that are fast, responsive, and tailored to your business needs. Let us help you create a powerful online presence that drives success!",
+      "delivers custom website development solutions that are fast, responsive, and tailored to your business needs. Let us help you create a powerful online presence that drives success!",
     icon: Globe,
     image: "/company-website/images/services/website-development-new.jpg",
   },
   {
     title: "Web App Development",
     description:
-      "Devunity specializes in cutting-edge web app development, creating seamless, scalable, and secure solutions that empower your business to thrive in the digital world. Let's build your next big idea!",
+      "specializes in cutting-edge web app development, creating seamless, scalable, and secure solutions that empower your business to thrive in the digital world. Let's build your next big idea!",
     icon: Code2,
     image: "/company-website/images/services/web-app.avif",
   },
   {
     title: "Mobile App Development",
     description:
-      "Devunity offers expert mobile app development, crafting intuitive, high-performance apps for iOS and Android. Let's turn your vision into a powerful, user-friendly mobile experience!",
+      "offers expert mobile app development, crafting intuitive, high-performance apps for iOS and Android. Let's turn your vision into a powerful, user-friendly mobile experience!",
     icon: Smartphone,
     image: "/company-website/images/services/mobile-app.avif",
   },

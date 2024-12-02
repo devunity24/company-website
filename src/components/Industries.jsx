@@ -13,7 +13,7 @@ import {
 import {
   Building,
   Briefcase,
-  CircleUserRound,
+  Ambulance,
   Store,
   LandmarkIcon,
   PlaneTakeoff,
@@ -39,7 +39,7 @@ const industries = [
     title: "Healthcare",
     description:
       "delivers innovative solutions for the Healthcare industry, focusing on improving patient care, operational efficiency, and data security. Their expertise in AI, IoT, and data analytics enables real-time health monitoring, predictive diagnostics, and personalized treatments. By streamlining administrative tasks and ensuring regulatory compliance, Devunity enhances workflow automation, reduces costs, and supports better clinical outcomes, helping healthcare providers deliver superior services in a rapidly evolving landscape.",
-    icon: CircleUserRound,
+    icon: Ambulance,
     image: "/company-website/images/industry/health-care.avif",
   },
   {
