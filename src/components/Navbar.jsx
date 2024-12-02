@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Menu, X } from "lucide-react";
 import BreakpointContext from "../context/breakPointContext";
 import { Modal } from "./modal/modal.jsx";
@@ -6,11 +6,11 @@ import { DynamicForm } from "./forms/DynamicForm.jsx";
 import emailjs from "emailjs-com";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const SERVICE_ID = "service_xyc8gf3";
 const TEMPLATE_ID = "template_vx66aid";
 const PUBLIC_KEY = "rxUNISFEIkAsf8Beu";
-import { LinearProgress } from "@mui/material";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -63,13 +63,19 @@ const contactFormConfig = {
 };
 
 export default function Navbar() {
-  const [tourProgress, setTourProgress] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [openSnack, setOpenSnack] = useState(false);
   const [isSuccessSnack, setIsSuccessSnack] = useState(true);
   const [snackMsg, setSnackMsg] = useState("");
+  // scroll progress work
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   const handleCloseSnack = (event, reason) => {
     if (reason === "clickaway") {
@@ -96,47 +102,17 @@ export default function Navbar() {
     setIsContactModalOpen(false);
   };
 
-  const handleEmail = () => {
-    const recipient = "devunity24@gmail.com"; // Replace with your email
-    const subject = "Subject of the Email";
-    const body = "Hello, this is the body of the email.";
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScroll =
-  //       document.documentElement.scrollTop + window.innerHeight;
-  //     const totalScroll = document.documentElement.scrollHeight;
-  //     const updatedProgress = (currentScroll / totalScroll) * 100;
-  //     setTourProgress(() => updatedProgress);
-  //   };
-
-  //   // Add scroll event listener
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Set initial values
-
-  //   // Cleanup listener on unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-  const showLinearProgressComp = () => {
-    if (tourProgress > 10)
-      return <LinearProgress variant="determinate" value={tourProgress} />;
-  };
   return (
     <nav className="fixed w-full bg-white backdrop-blur-sm z-50 shadow-sm ">
-      {/* {showLinearProgressComp()} */}
+      <motion.div
+        className="fixed w-full bg-blue-700 h-2"
+        style={{ scaleX }}
+        initial={{ transformOrigin: "0 0" }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         <div className="flex justify-between h-full">
           <div className="flex items-center">
             <a href="#" className="flex items-center space-x-2">
-              {/* <Code2 className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">Devunity</span> */}
               <img
                 src="/company-website/images/company-logo2.png"
                 alt="comapny-logo"
