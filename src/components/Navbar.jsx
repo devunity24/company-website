@@ -105,7 +105,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full bg-white backdrop-blur-sm z-50 shadow-sm ">
       <motion.div
-        className="fixed w-full bg-blue-700 h-2"
+        className="fixed w-full bg-blue-700 h-1"
         style={{ scaleX }}
         initial={{ transformOrigin: "0 0" }}
       />
