@@ -95,7 +95,7 @@ export function DynamicField({ field }) {
   return (
     <div className="mb-4">
       <label htmlFor={field.name} className="block text-sm font-medium text-gray-700 mb-1">
-        {field.name}
+        {field.label}
         {field.required && <span className="text-red-500 ml-1">*</span>}
       </label>
       {renderField()}

@@ -4,6 +4,8 @@ import BreakpointContext from "../context/breakPointContext";
 import { Modal } from "./modal/modal.jsx";
 import { DynamicForm } from "./forms/DynamicForm.jsx";
 import emailjs from "emailjs-com";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from '@mui/material/Alert';
 
 const SERVICE_ID = "service_xyc8gf3";
 const TEMPLATE_ID = "template_vx66aid";
@@ -56,17 +58,30 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const isSmallScreen = Boolean(useContext(BreakpointContext) === "sm");
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [openSnack, setOpenSnack] = useState(false);
+  const [isSuccessSnack, setIsSuccessSnack] = useState(true);
+  const [snackMsg, setSnackMsg] = useState("");
+
+  const handleCloseSnack = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnack(false);
+  };
 
   const handleContactSubmit = (data) => {
     console.log("Contact Form Data:", data);
     emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY).then(
       (result) => {
-        console.log(result.text);
-        alert("Message Sent Successfully");
+        setSnackMsg("Message Sent Successfully.");
+        setIsSuccessSnack(true);
+        setOpenSnack(true);
       },
       (error) => {
-        console.log(error.text);
-        alert("Something went wrong!");
+        setSnackMsg("Something Went Wrong!");
+        setIsSuccessSnack(false);
+        setOpenSnack(true);
       }
     );
     setIsContactModalOpen(false);
@@ -167,6 +182,21 @@ export default function Navbar() {
           onSubmit={handleContactSubmit}
         />
       </Modal>
+      <Snackbar
+        open={openSnack}
+        autoHideDuration={4000}
+        onClose={handleCloseSnack}
+        anchorOrigin={{ horizontal: 'center', vertical: 'top' }}
+      >
+        <Alert
+          onClose={handleCloseSnack}
+          severity={isSuccessSnack ? "success" : "error"}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {snackMsg}
+        </Alert>
+      </Snackbar>
     </nav>
   );
 }
