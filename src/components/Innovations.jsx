@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import ImageViewer from "react-simple-image-viewer";
 
 const products = [
   {
@@ -53,7 +54,23 @@ const products = [
   },
 ];
 
-export default function Innovations() {
+export default function Innovations({ onOpenImageView }) {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    onOpenImageView(true);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    onOpenImageView(false);
+    setIsViewerOpen(false);
+  };
+  const getImages = useMemo(() => {
+    return products.map((e) => e.image);
+  });
   return (
     <section id="products" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
@@ -76,19 +93,23 @@ export default function Innovations() {
               key={index}
               className="group rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden cursor-pointer">
                 <LazyLoadImage
                   src={product.image}
                   alt={product.name}
                   effect="blur"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onClick={() => openImageViewer(index)}
                 />
               </div>
               <div className="p-6 bg-white">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 mb-4">The {product.name} module in <strong>Devunity NetSol</strong> {product.description}</p>
+                <p className="text-gray-600 mb-4">
+                  The {product.name} module in <strong>Devunity NetSol</strong>{" "}
+                  {product.description}
+                </p>
                 {/* <button className="text-blue-600 font-medium inline-flex items-center group/btn">
                   Learn More
                   <ArrowRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -98,6 +119,15 @@ export default function Innovations() {
           ))}
         </div>
       </div>
+      {isViewerOpen && (
+        <ImageViewer
+          src={getImages}
+          currentIndex={currentImage}
+          disableScroll={true}
+          closeOnClickOutside={false}
+          onClose={closeImageViewer}
+        />
+      )}
     </section>
   );
 }

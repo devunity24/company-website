@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, useState } from "react";
 import BreakpointContext from "./context/breakPointContext";
 import useBreakPoint from "./hooks/useBreakpoint";
 /**
@@ -16,18 +16,18 @@ const Industries = lazy(() => import("./components/Industries"));
 const Partners = lazy(() => import("./components/Partners"));
 function App() {
   const fetchBreakpoint = useBreakPoint();
+  const [showNavbar, setShowNavbar] = useState(true);
   return (
     <>
       <BreakpointContext.Provider value={fetchBreakpoint}>
         <div className="min-h-screen bg-white">
-         
-          <Navbar />
+          {showNavbar && <Navbar />}
           <main>
             <Hero />
             <About />
             <Services />
             {/* <Expertise /> */}
-            <Innovations />
+            <Innovations onOpenImageView={(val) => setShowNavbar(() => !val)} />
             <Industries />
             <Partners />
             {/* <Visionaries /> */}
