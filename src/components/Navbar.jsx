@@ -41,6 +41,13 @@ const contactFormConfig = {
       required: true,
     },
     {
+      name: "company",
+      label: "Company Name",
+      type: "text",
+      placeholder: "Enter your company name",
+      required: false,
+    },
+    {
       name: "message",
       label: "Message",
       type: "textarea",
