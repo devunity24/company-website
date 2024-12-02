@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy,} from "react";
 import BreakpointContext from "./context/breakPointContext";
 import useBreakPoint from "./hooks/useBreakpoint";
 /**
@@ -19,6 +19,7 @@ function App() {
   return (
     <>
       <BreakpointContext.Provider value={fetchBreakpoint}>
+        {/* {showLinearProgressComp()} */}
         <div className="min-h-screen bg-white">
           <Navbar />
           <main>
