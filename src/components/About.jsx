@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-import { Button } from "@mui/material";
+import { Button, Grid2, Typography, Box } from "@mui/material";
 // import tw from "twin.macro";
 
 const features = [
@@ -50,11 +50,17 @@ export default function About() {
   return (
     <section id="why-devunity" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="gap-16 items-center mb-6">
+        <div className="gap-16 items-center mb-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Devunity
-            </h2>
+            <Box sx={{ textAlign: "center", mb: 6 }}>
+              <Typography
+                variant="h3"
+                component="h2"
+                sx={{ fontWeight: "bold", mb: 2 }}
+              >
+                Why Devunity
+              </Typography>
+            </Box>
             <p className="text-lg text-gray-600 mb-8 text-justify">
               At <strong>Devunity</strong>, we are committed to helping
               businesses thrive by providing cutting-edge technology solutions
@@ -64,45 +70,44 @@ export default function About() {
             </p>
 
             <div className="space-y-4 mb-6">
-              {features.map((item, index) => (
-                <div className="flex" key={index}>
-                  <div className="flex  space-x-3">
-                    <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0" />
-                  </div>
-                  <div className="block md:flex pl-3">
-                    <div>
-                      <span className="font-semibold">{item.title} :</span>
+              <Grid2 container spacing={6}>
+                {features.map((item, index) => (
+                  <Grid2
+                    size={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 4 }}
+                    key={index}
+                  >
+                    <div className="flex">
+                      <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mr-2" />
+                      <span className="font-semibold">{item.title}</span>
                     </div>
-                    <div>
-                      <p className="text-gray-600 text-justify md:pl-3">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                    <p className="text-gray-600">
+                      {item.description}
+                    </p>
+                  </Grid2>
+                ))}
+              </Grid2>
             </div>
-            <p className="text-lg text-gray-600">
+            {/* <p className="text-lg text-gray-600">
               Partner with <strong>Devunity</strong>, where experience,
               innovation, and collaboration drive exceptional results.
-            </p>
+            </p> */}
           </div>
         </div>
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 border rounded py-2">
           <div className="flex justify-center pt-3 px-1">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
               Let's craft innovative solutions together
             </h1>
           </div>
           <div className="flex justify-center">
-            <span className="text-lg  text-gray-600 text-center ">
+            <span className="text-lg  text-gray-600 text-center">
               Our team is ready to help you build the software solution you need
               to achieve your business goals.
             </span>
           </div>
-          <div className="flex justify-center mt-3 pb-3">
-            <Button  variant="contained" sx={{textTransform:"capitalize"}}>
-              Request a demo
+          <div className="flex justify-center mt-3 pb-4">
+            <Button variant="contained" sx={{ textTransform: "capitalize" }}>
+              Contact us
             </Button>
           </div>
         </div>
