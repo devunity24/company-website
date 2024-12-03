@@ -123,12 +123,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center lg:space-x-8">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-xs lg:text-sm font-medium transition-colors"
               >
                 {item.name}
               </a>
