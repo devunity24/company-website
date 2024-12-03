@@ -1,6 +1,7 @@
 import React from "react";
-import { CheckCircle2, Grid } from "lucide-react";
-import { Grid2 } from "@mui/material";
+import { CheckCircle2 } from "lucide-react";
+import { Button } from "@mui/material";
+// import tw from "twin.macro";
 
 const features = [
   {
@@ -49,12 +50,12 @@ export default function About() {
   return (
     <section id="why-devunity" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="gap-16 items-center">
+        <div className="gap-16 items-center mb-6">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Why Devunity
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-600 mb-8 text-justify">
               At <strong>Devunity</strong>, we are committed to helping
               businesses thrive by providing cutting-edge technology solutions
               tailored to their specific needs. With a focus on quality,
@@ -85,6 +86,24 @@ export default function About() {
               Partner with <strong>Devunity</strong>, where experience,
               innovation, and collaboration drive exceptional results.
             </p>
+          </div>
+        </div>
+        <div className="bg-gray-50">
+          <div className="flex justify-center pt-3 px-1">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Let's craft innovative solutions together
+            </h1>
+          </div>
+          <div className="flex justify-center">
+            <span className="text-lg  text-gray-600 text-center ">
+              Our team is ready to help you build the software solution you need
+              to achieve your business goals.
+            </span>
+          </div>
+          <div className="flex justify-center mt-3 pb-3">
+            <Button  variant="contained" sx={{textTransform:"capitalize"}}>
+              Request a demo
+            </Button>
           </div>
         </div>
       </div>
