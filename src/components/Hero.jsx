@@ -90,10 +90,10 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-4xl">
-          <h1 className="text-3xl md:text-6xl font-bold text-white">
+          <h1 className="text-3xl md:text-6xl font-semibold text-white">
             Crafting innovative solutions,
           </h1>
-          <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-6xl font-semibold text-white mb-6">
             together
           </h1>
           <p className="text-lg md:text-xl  text-gray-200 mb-8 text-justify">

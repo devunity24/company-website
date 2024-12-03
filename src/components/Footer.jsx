@@ -31,11 +31,11 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 "Home",
+                "Why Devunity",
                 "Services",
                 "Products",
                 "Industries",
                 "Partners",
-                "Why Devunity",
               ].map((item) => (
                 <li key={item}>
                   <a
